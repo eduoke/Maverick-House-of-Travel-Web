@@ -92,7 +92,7 @@ Running commands with npm `npm run [command]`
 | `dev`           | Starts a development instance of the app |
 
 
-## Troubleshooting MongoDB server issues
+## Common Prisma and MongoDB server issues
 
 You might face the following issues with your local MongoDB server, below are 
 some of the issues i encountered and how i fixed them

@@ -127,6 +127,7 @@ const Categories = () => {
             label={item.label}
             icon={item.icon}
             selected={category === item.label}
+            
           />
         ))}
       </div>

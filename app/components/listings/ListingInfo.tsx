@@ -4,10 +4,12 @@ import dynamic from "next/dynamic";
 import { IconType } from "react-icons";
 
 import useCountries from "@/app/hooks/useCountries";
-import { SafeUser } from "@/app/types";
+import placeName from "@/app/components/Map"
+import { SafeLocName, SafeUser } from "@/app/types";
 
 import Avatar from "../Avatar";
 import ListingCategory from "./ListingCategory";
+
 
 const Map = dynamic(() => import('../Map'), { 
   ssr: false 
@@ -25,6 +27,7 @@ interface ListingInfoProps {
     description: string;
   } | undefined
   locationValue: string;
+  exactLocName: SafeLocName;
 }
 
 const ListingInfo: React.FC<ListingInfoProps> = ({
@@ -35,10 +38,13 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
   bathroomCount,
   category,
   locationValue,
+  exactLocName
 }) => {
   const { getByValue } = useCountries();
+ 
 
-  const coordinates = getByValue(locationValue)?.latlng
+  const coordinates = getByValue(locationValue)?.latlng 
+ 
 
   return ( 
     <div className="col-span-4 flex flex-col gap-8">
@@ -90,7 +96,12 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
         {description}
       </div>
       <hr />
+      <div>
+        
+      </div>
       <Map center={coordinates} />
+      {/* this is a silly hack to get the exact name of map picker */}
+      {/* {exactLocName.displayName} */}
     </div>
    );
 }

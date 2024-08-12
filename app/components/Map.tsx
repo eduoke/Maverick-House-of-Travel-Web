@@ -56,6 +56,7 @@ const Map: React.FC<MapProps> = ({ center: initialCenter }) => {
   // this component uses state to keep track of the current center position and place the name.
   const [center, setCenter] = useState<L.LatLngExpression>(initialCenter as L.LatLngExpression || [51, -0.09]);
   const [placeName, setPlaceName] = useState<string>('');
+  
 
   const handlePositionChange = useCallback(async (newPosition: L.LatLng) => {
     // this function updates the center position and fetches the place name using 
@@ -99,6 +100,7 @@ const Map: React.FC<MapProps> = ({ center: initialCenter }) => {
         <p className="mt-2">Selected location: {placeName}</p>
       )}
       </div>
+      
   )
 }
 

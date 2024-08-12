@@ -23,6 +23,7 @@
     "leaflet": "^1.9.3",
     "lru-cache": "^11.0.0",
     "maverick-house": "file:",
+    "mocha": "^10.7.3",
     "next": "13.2.4",
     "next-auth": "^4.20.1",
     "next-cloudinary": "^4.0.1",
